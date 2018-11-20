@@ -1,0 +1,29 @@
+.modal {
+  position: fixed;
+  top: 0px; left: 0px;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal--active {
+  transition: visibility .1s, opacity .4s .1s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal--deactive {
+  transition: opacity .4s, visibility .1s .4s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 30px; height: 30px;
+  background: red;
+  cursor: pointer;
+}
