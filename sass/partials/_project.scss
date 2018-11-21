@@ -13,7 +13,7 @@
     opacity: 1;
   }
 
-  &:hover .project__decription, &:hover .project__quick-view {
+  &:hover .project__description, &:hover .project__quick-view {
     transform: none;
   }
 }
@@ -47,7 +47,7 @@
   opacity: 0;
 }
 
-.project__decription {
+.project__description {
   float: left;
   transition: transform .5s;
   transform: translate3d(0, 150%, 0);

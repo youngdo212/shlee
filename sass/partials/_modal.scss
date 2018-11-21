@@ -6,6 +6,7 @@
   z-index: 2;
   visibility: hidden;
   opacity: 0;
+  color: #fff;
 }
 
 .modal--active {
@@ -26,4 +27,33 @@
   width: 30px; height: 30px;
   background: red;
   cursor: pointer;
+}
+
+.modal__content {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  overflow: hidden;
+}
+
+.modal__video {
+  width: $video-width; height: $video-height;
+  background: #fff;
+  margin-bottom: 15px;
+}
+
+.modal__title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 3px;
+}
+
+.modal__description {
+  float: left;
+  font-size: 1.4rem;
+}
+
+.modal__more-button {
+  float: right;
+  font-size: 1.4rem;
 }
