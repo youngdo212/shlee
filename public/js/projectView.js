@@ -14,6 +14,8 @@ export default class ProjectView {
   }
 
   bindQuickViewHandler(handler) {
+    if(!this.quickViewButton) return;
+    
     this.quickViewButton.addEventListener('click', (e) => {
       e.stopPropagation();
       handler(this.project);

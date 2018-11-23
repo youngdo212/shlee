@@ -1,12 +1,12 @@
-export const projectView = ({title, description, image, width, heightRatio, marginRight}) => {
+export const projectView = ({title, titleColor = '#fff', description, image, video, width, heightRatio, marginRight}) => {
   return (
     `<div class="project" style="width: ${width}; padding-top: ${heightRatio}; margin-right: ${marginRight};">
       <div class="project-inner">
         <img class="project__image" src="${image}" alt="project_image">
-        <div class="project__title">${title}</div>
+        <div class="project__title" style="color: ${titleColor};">${title}</div>
         <div class="project__footer">
           <div class="project__description">${description}</div>
-          <div class="project__quick-view">Quick view</div>
+          ${video ? '<div class="project__quick-view">Quick view</div>' : ''}
         </div>
       </div>
     </div>`
