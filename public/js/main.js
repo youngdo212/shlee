@@ -1,7 +1,9 @@
 import stickyNavigation from './stickyNavigation.js';
 import Modal from './modal.js';
 import ProjectSectionView from './projectSectionView.js';
-import {projects, showreel} from './data.js';
+import MenuView from './menuView.js';
+
+import {projects, showreel, menuItems} from './data.js';
 
 const nav = new stickyNavigation({
   navigation: document.querySelector('.sticky-nav'),
@@ -22,3 +24,8 @@ projectSectionView.registerQuickViewHandler(modal.activate.bind(modal));
 const showreelButton = document.querySelector('.header__showreel');
 
 showreelButton.addEventListener('click', modal.activate.bind(modal, showreel));
+
+const menuView = new MenuView({
+  menuItems,
+  wrapper: document.querySelector('.sticky-nav__menu'),
+})

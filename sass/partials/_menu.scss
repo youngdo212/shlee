@@ -1,0 +1,20 @@
+.menu {
+  float: right;
+}
+
+.menu__item {
+  display: inline-block;
+  line-height: 1.3;
+  color: #000;
+  font-size: 1.4rem;
+  margin-right: 25px;
+  text-decoration: none;
+
+  &:nth-last-child(1) {
+    margin-right: 0px;
+  }
+}
+
+.menu__item--active {
+  border-bottom: 3px solid rgb(108, 234, 238);
+}

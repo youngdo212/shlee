@@ -16,3 +16,26 @@ export const projects = [
 export const showreel = {
   video: 'https://player.vimeo.com/video/174374502?color=f0a400&title=0&byline=0&portrait=0',
 }
+
+export const menuItems = [
+  {
+    name: 'Work',
+    path: '/test',
+  },
+  {
+    name: 'Lab',
+    path: '/test',
+  },
+  {
+    name: 'Info',
+    path: '/test',
+  },
+  {
+    name: 'News',
+    path: '/test',
+  },
+  {
+    name: 'About',
+    path: '/test',
+  },
+]

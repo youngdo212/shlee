@@ -10,3 +10,7 @@ export const projectView = ({title, description, image}) => {
     </div>
   `
 }
+
+export const menuItemView = ({name, path}) => {
+  return `<a href="${path}" class="menu__item menu__item--active">${name}</a>`
+}
