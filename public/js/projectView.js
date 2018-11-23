@@ -1,11 +1,13 @@
+import {projectView as template} from './template.js';
+
 export default class ProjectView {
-  constructor({project, template, wrapper}) {
+  constructor({project, wrapper}) {
     this.project = project;
     this.quickViewButton = null;
-    this.render({template, wrapper});
+    this.render({wrapper});
   }
 
-  render({template, wrapper}) {
+  render({wrapper}) {
     const html = template(this.project);
     wrapper.insertAdjacentHTML('beforeend', html);
     this.quickViewButton = wrapper.lastElementChild.querySelector('.project__quick-view');
