@@ -29,17 +29,25 @@ export default class MenuView {
     this.toggleButton.addEventListener('click', (e) => {
       e.stopPropagation();
       this.isActive ? this.deactivate() : this.activate();
-      this.isActive = !this.isActive;
     })
   }
 
   activate() {
     this.wrapper.classList.add('menu-animation--active');
     this.wrapper.classList.remove('menu-animation--deactive');
+    this.isActive = true;
+    this.registerCloseMenuHandler();
+  }
+
+  registerCloseMenuHandler() {
+    window.addEventListener('scroll', () => {
+      this.deactivate();
+    }, {once: true});
   }
 
   deactivate() {
     this.wrapper.classList.remove('menu-animation--active');
     this.wrapper.classList.add('menu-animation--deactive');
+    this.isActive = false;
   }
 }
