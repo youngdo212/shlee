@@ -12,5 +12,10 @@ export const projectView = ({title, description, image}) => {
 }
 
 export const menuItemView = ({name, path, color = "#000"}) => {
-  return `<a href="${path}" style="color: ${color}" class="menu__item menu__item--active">${name}</a>`
+  return `
+  <a href="${path}" style="color: ${color}" class="menu-item">
+    <div class="menu-item__name">${name}</div>
+    <div class="menu-item__underline"></div>
+  </a>
+  `
 }
