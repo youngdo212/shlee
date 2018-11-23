@@ -12,3 +12,7 @@ export const projects = [
     video: 'https://player.vimeo.com/video/174374502?color=f0a400&title=0&byline=0&portrait=0',
   },
 ];
+
+export const showreel = {
+  video: 'https://player.vimeo.com/video/174374502?color=f0a400&title=0&byline=0&portrait=0',
+}

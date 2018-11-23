@@ -1,7 +1,7 @@
 import stickyNavigation from './stickyNavigation.js';
 import Modal from './modal.js';
 import ProjectSectionView from './projectSectionView.js';
-import {projects} from './data.js';
+import {projects, showreel} from './data.js';
 
 const nav = new stickyNavigation({
   navigation: document.querySelector('.sticky-nav'),
@@ -18,3 +18,7 @@ const projectSectionView = new ProjectSectionView({
 })
 
 projectSectionView.registerQuickViewHandler(modal.activate.bind(modal));
+
+const showreelButton = document.querySelector('.header__showreel');
+
+showreelButton.addEventListener('click', modal.activate.bind(modal, showreel));

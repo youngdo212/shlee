@@ -3,6 +3,7 @@ export default class Modal {
     
     this.modal = modal;
     this.closeButton = this.modal.querySelector('.modal__close-button');
+    this.details = this.modal.querySelector('.modal__details');
     this.video = this.modal.querySelector('.modal__video > iframe');
     this.title = this.modal.querySelector('.modal__title');
     this.description = this.modal.querySelector('.modal__description');
@@ -18,9 +19,11 @@ export default class Modal {
   }
 
   activate({video, title, description}) {
+    if(!title && !description) this.details.classList.add('modal__details--deactive');
+
     this.video.src = video;
-    this.title.textContent = title;
-    this.description.textContent = description;
+    this.title.textContent = title || "";
+    this.description.textContent = description || "";
     this.modal.classList.remove('modal--deactive');
     this.modal.classList.add('modal--active');
   }
@@ -30,6 +33,7 @@ export default class Modal {
       this.video.src = "";
       this.title.textContent = "";
       this.description.textContent = "";
+      this.details.classList.remove('modal__details--deactive');
     }, {once: true});
     
     this.modal.classList.remove('modal--active');

@@ -63,7 +63,7 @@ header:hover .header__cover {
   transition: opacity 0.5s;
 }
 
-.header__link {
+.header__showreel {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -72,7 +72,7 @@ header:hover .header__cover {
   font-size: 1.4rem;
   font-weight: bold;
   border-bottom: 2px solid #6ceaee;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 nav {
@@ -214,7 +214,6 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  overflow: hidden;
 }
 
 .modal__video {
@@ -222,6 +221,14 @@ footer {
   height: 70vh;
   background: #fff;
   margin-bottom: 15px;
+}
+
+.modal__details {
+  overflow: hidden;
+}
+
+.modal__details--deactive {
+  display: none;
 }
 
 .modal__title {

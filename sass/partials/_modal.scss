@@ -33,13 +33,20 @@
   position: absolute;
   top: 50%; left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  overflow: hidden;
 }
 
 .modal__video {
   width: $video-width; height: $video-height;
   background: #fff;
   margin-bottom: 15px;
+}
+
+.modal__details {
+  overflow: hidden;
+}
+
+.modal__details--deactive {
+  display: none;
 }
 
 .modal__title {

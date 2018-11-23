@@ -21,7 +21,7 @@ header {
   transition: opacity .5s;
 }
 
-.header__link {
+.header__showreel {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate3d(-50%, -50%,0);
@@ -29,5 +29,5 @@ header {
   font-size: 1.4rem;
   font-weight: bold;
   border-bottom: 2px solid rgb(108, 234, 238);
-  text-decoration: none;
+  cursor: pointer;
 }
