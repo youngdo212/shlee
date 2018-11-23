@@ -347,12 +347,20 @@ footer {
 }
 
 .menu-animation {
-  transition: opacity 0.5s;
   opacity: 0;
+  visibility: hidden;
 }
 
 .menu-animation--active {
+  transition: visibility 0.1s, opacity 0.5s 0.1s;
   opacity: 1;
+  visibility: visible;
+}
+
+.menu-animation--deactive {
+  transition: opacity 0.5s, visibility 0.1s 0.5s;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -23,8 +23,18 @@ export default class MenuView {
   registerToggleButtonHandler() {
     this.toggleButton.addEventListener('click', (e) => {
       e.stopPropagation();
-      this.isActive ? this.wrapper.classList.remove('menu-animation--active') : this.wrapper.classList.add('menu-animation--active');
+      this.isActive ? this.deactivate() : this.activate();
       this.isActive = !this.isActive;
     })
+  }
+
+  activate() {
+    this.wrapper.classList.add('menu-animation--active');
+    this.wrapper.classList.remove('menu-animation--deactive');
+  }
+
+  deactivate() {
+    this.wrapper.classList.remove('menu-animation--active');
+    this.wrapper.classList.add('menu-animation--deactive');
   }
 }

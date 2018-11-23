@@ -16,10 +16,18 @@
 }
 
 .menu-animation {
-  transition: opacity .5s;
   opacity: 0;
+  visibility: hidden;
 }
 
 .menu-animation--active {
+  transition: visibility .1s, opacity .5s .1s;
   opacity: 1;
+  visibility: visible;
+}
+
+.menu-animation--deactive {
+  transition: opacity .5s, visibility .1s .5s;
+  opacity: 0;
+  visibility: hidden;
 }
