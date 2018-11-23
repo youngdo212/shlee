@@ -345,6 +345,11 @@ footer {
   transform: none;
 }
 
+.menu-item--active .menu-item__underline {
+  opacity: 1;
+  transform: none;
+}
+
 .menu-item__name {
   line-height: 1.3;
   font-size: 1.4rem;

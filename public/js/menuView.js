@@ -1,28 +1,44 @@
-import {menuItemView as template} from './template.js';
+import MenuItemView from './menuItemView.js';
 
 export default class MenuView {
   constructor({menuItems, wrapper, toggleButton, color}) {
-    this.menuItems = menuItems;
+    this.selectedMenuItem = null;
     this.wrapper = wrapper;
     this.toggleButton = toggleButton;
     this.isActive = !!toggleButton ? false : true;
+    this.menuItemViews = null;
 
     this.render({
+      menuItems,
+      wrapper,
       hasToggleButton: !!toggleButton,
       color,
     });
     this.toggleButton && this.registerToggleButtonHandler();
+    this.setSelectedMenuItem(menuItems[0]);
   }
 
-  render({hasToggleButton, color}) {
-    this.menuItems.forEach((menuItem => {
-      const styledMenuItem = Object.assign({color}, menuItem);
-      const html = template(styledMenuItem);
+  render({menuItems, wrapper, hasToggleButton, color}) {
+    this.menuItemViews = menuItems.map((menuItem) => {
+      const menuItemView = new MenuItemView({
+        menuItem,
+        wrapper,
+        color
+      });
 
-      this.wrapper.insertAdjacentHTML('beforeend', html);
-    }))
+      menuItemView.bindClickMenuItemHandler(this.setSelectedMenuItem.bind(this));
+
+      return menuItemView;
+    });
 
     hasToggleButton && this.wrapper.classList.add('menu-animation')
+  }
+
+  setSelectedMenuItem(menuItem) {
+    this.selectedMenuItem = menuItem;
+    this.menuItemViews.forEach((menuItemView) => {
+      menuItemView.getMenuItem() === this.selectedMenuItem ? menuItemView.activate() : menuItemView.deactivate();
+    })
   }
 
   registerToggleButtonHandler() {
