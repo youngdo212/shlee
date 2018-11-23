@@ -1,21 +1,23 @@
-export const projectView = ({title, description, image}) => {
-  return `
-    <div class="project" style="width: 47%; height: 40vh">
-      <img class="project__image" src="${image}" alt="project_image">
-      <div class="project__title">${title}</div>
-      <div class="project__footer">
-        <div class="project__description">${description}</div>
-        <div class="project__quick-view">Quick view</div>
+export const projectView = ({title, description, image, width, heightRatio, marginRight}) => {
+  return (
+    `<div class="project" style="width: ${width}; padding-top: ${heightRatio}; margin-right: ${marginRight};">
+      <div class="project-inner">
+        <img class="project__image" src="${image}" alt="project_image">
+        <div class="project__title">${title}</div>
+        <div class="project__footer">
+          <div class="project__description">${description}</div>
+          <div class="project__quick-view">Quick view</div>
+        </div>
       </div>
-    </div>
-  `
+    </div>`
+  );
 }
 
 export const menuItemView = ({name, path, color = "#000"}) => {
-  return `
-  <a href="${path}" style="color: ${color}" class="menu-item">
-    <div class="menu-item__name">${name}</div>
-    <div class="menu-item__underline"></div>
-  </a>
-  `
+  return (
+    `<a href="${path}" style="color: ${color}" class="menu-item">
+      <div class="menu-item__name">${name}</div>
+      <div class="menu-item__underline"></div>
+    </a>`
+  );
 }

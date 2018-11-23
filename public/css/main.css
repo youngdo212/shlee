@@ -185,9 +185,7 @@ header {
 
 section {
   width: 90vw;
-  height: 3000px;
-  background: #f5afaf;
-  margin: 100px auto;
+  margin: 130px auto 50px auto;
 }
 
 footer {
@@ -198,11 +196,12 @@ footer {
 }
 
 .project {
+  height: 0px;
   display: inline-block;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  margin: 0px 15px 15px 0px;
+  margin-bottom: 10px;
 }
 .project:hover .project__image {
   transform: scale(1.05);
@@ -212,6 +211,14 @@ footer {
 }
 .project:hover .project__description, .project:hover .project__quick-view {
   transform: none;
+}
+
+.project-inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
 }
 
 .project__image {
@@ -239,7 +246,7 @@ footer {
   left: 0px;
   width: 100%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-  padding: 50px 15px 15px 15px;
+  padding: 50px 15px 0px 15px;
   color: #fff;
   overflow: hidden;
   transition: opacity 0.3s;
@@ -250,12 +257,14 @@ footer {
   float: left;
   transition: transform 0.5s;
   transform: translate3d(0, 150%, 0);
+  margin-bottom: 15px;
 }
 
 .project__quick-view {
   float: right;
   transition: transform 0.5s;
   transform: translate3d(0, 150%, 0);
+  margin-bottom: 15px;
 }
 
 .modal {
