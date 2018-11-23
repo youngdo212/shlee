@@ -64,7 +64,7 @@ export const projects = [
 ];
 
 export const showreel = {
-  video: 'https://player.vimeo.com/video/174374502?color=f0a400&title=0&byline=0&portrait=0',
+  video: 'https://player.vimeo.com/video/295556349?title=0&byline=0&portrait=0&badge=0&color=ffffff',
 }
 
 export const menuItems = [
