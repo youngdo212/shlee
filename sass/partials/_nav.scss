@@ -1,7 +1,54 @@
-nav {
-  position: fixed;
+.nav {
+  box-sizing: border-box;
+  position: absolute;
   top: 0px; left: 0px;
-  width: 100%;
-  padding-top: 70px;
-  background: red;
+  width: 100%; height: 170px;
+  padding: 0px 90px;
+}
+
+.nav__logo-wrap {
+  float: left;
+  height: 100%;
+
+  // vertical-align helper
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.nav__logo {
+  display: inline-block;
+  width: 170px; height: 80px;
+  background: yellowgreen;
+  vertical-align: middle;
+}
+
+.nav__menu-wrap {
+  float: right;
+  height: 100%;
+
+  // vertical-align helper
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.nav__menu {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav__menu-button {
+  display: inline-block;
+  width: 30px; height: 30px;
+  vertical-align: middle;
+  background: #fff;
+  margin-left: 30px;
+  cursor: pointer;
 }

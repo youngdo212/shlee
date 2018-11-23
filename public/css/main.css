@@ -75,13 +75,59 @@ header:hover .header__cover {
   cursor: pointer;
 }
 
-nav {
-  position: fixed;
+.nav {
+  box-sizing: border-box;
+  position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
-  padding-top: 70px;
-  background: red;
+  height: 170px;
+  padding: 0px 90px;
+}
+
+.nav__logo-wrap {
+  float: left;
+  height: 100%;
+}
+.nav__logo-wrap::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.nav__logo {
+  display: inline-block;
+  width: 170px;
+  height: 80px;
+  background: yellowgreen;
+  vertical-align: middle;
+}
+
+.nav__menu-wrap {
+  float: right;
+  height: 100%;
+}
+.nav__menu-wrap::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.nav__menu {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav__menu-button {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  background: #fff;
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 .sticky-nav {
@@ -284,10 +330,6 @@ footer {
   font-size: 1.4rem;
 }
 
-.menu {
-  float: right;
-}
-
 .menu__item {
   display: inline-block;
   line-height: 1.3;
@@ -302,6 +344,15 @@ footer {
 
 .menu__item--active {
   border-bottom: 3px solid #6ceaee;
+}
+
+.menu-animation {
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.menu-animation--active {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

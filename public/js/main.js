@@ -25,7 +25,13 @@ const showreelButton = document.querySelector('.header__showreel');
 
 showreelButton.addEventListener('click', modal.activate.bind(modal, showreel));
 
-const menuView = new MenuView({
+const navigationMenuView = new MenuView({
+  menuItems,
+  wrapper: document.querySelector('.nav__menu'),
+  toggleButton: document.querySelector('.nav__menu-button'),
+})
+
+const stickyNavigationMenuView = new MenuView({
   menuItems,
   wrapper: document.querySelector('.sticky-nav__menu'),
 })
