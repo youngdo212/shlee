@@ -1,13 +1,7 @@
 nav {
   position: fixed;
-  top: 0px;
-  width: 100vw; height: 100px;
-  background: rgb(150, 253, 147);
-  z-index: 1;
-  transition: transform .7s;
-  transform: translate3d(0, -100%, 0);
-}
-
-.nav--visible {
-  transform: none;
+  top: 0px; left: 0px;
+  width: 100%;
+  padding-top: 70px;
+  background: red;
 }

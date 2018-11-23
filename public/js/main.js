@@ -1,9 +1,9 @@
-import Navigation from './navigation.js';
+import stickyNavigation from './stickyNavigation.js';
 import Modal from './modal.js';
 
-let nav = new Navigation({
-  navigation: document.querySelector('nav'),
-  top: document.querySelector('header').offsetHeight,
+let nav = new stickyNavigation({
+  navigation: document.querySelector('.sticky-nav'),
+  disableTop: document.querySelector('header').offsetHeight,
 })
 
 let modal = new Modal({
