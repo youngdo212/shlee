@@ -1,4 +1,4 @@
-export default function({title, description, image}) {
+export const projectView = ({title, description, image}) => {
   return `
     <div class="project" style="width: 47%; height: 40vh">
       <img class="project__image" src="${image}" alt="project_image">

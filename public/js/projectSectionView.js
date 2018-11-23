@@ -1,5 +1,5 @@
 import ProjectView from './projectView.js';
-import template from './template.js';
+import {projectView as template} from './template.js';
 
 export default class ProjectSectionView {
   constructor({projects, wrapper}) {
