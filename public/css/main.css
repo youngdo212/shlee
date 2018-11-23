@@ -44,9 +44,6 @@ header {
   height: 50vh;
   overflow: hidden;
 }
-header:hover .header__cover {
-  opacity: 1;
-}
 
 .header__video {
   width: 100%;
@@ -61,6 +58,10 @@ header:hover .header__cover {
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.header__cover--active {
+  opacity: 1;
 }
 
 .header__showreel {

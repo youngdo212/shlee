@@ -2,6 +2,7 @@ import stickyNavigation from './stickyNavigation.js';
 import Modal from './modal.js';
 import ProjectSectionView from './projectSectionView.js';
 import MenuView from './menuView.js';
+import Header from './header.js';
 
 import {projects, showreel, menuItems} from './data.js';
 
@@ -34,4 +35,8 @@ const navigationMenuView = new MenuView({
 const stickyNavigationMenuView = new MenuView({
   menuItems,
   wrapper: document.querySelector('.sticky-nav__menu'),
+})
+
+const header = new Header({
+  header: document.querySelector('header'),
 })
