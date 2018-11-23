@@ -1,19 +1,24 @@
 import {menuItemView as template} from './template.js';
 
 export default class MenuView {
-  constructor({menuItems, wrapper, toggleButton}) {
+  constructor({menuItems, wrapper, toggleButton, color}) {
     this.menuItems = menuItems;
     this.wrapper = wrapper;
     this.toggleButton = toggleButton;
     this.isActive = !!toggleButton ? false : true;
 
-    this.render({hasToggleButton: !!toggleButton});
+    this.render({
+      hasToggleButton: !!toggleButton,
+      color,
+    });
     this.toggleButton && this.registerToggleButtonHandler();
   }
 
-  render({hasToggleButton}) {
+  render({hasToggleButton, color}) {
     this.menuItems.forEach((menuItem => {
-      const html = template(menuItem);
+      const styledMenuItem = Object.assign({color}, menuItem);
+      const html = template(styledMenuItem);
+
       this.wrapper.insertAdjacentHTML('beforeend', html);
     }))
 

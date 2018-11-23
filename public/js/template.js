@@ -11,6 +11,6 @@ export const projectView = ({title, description, image}) => {
   `
 }
 
-export const menuItemView = ({name, path}) => {
-  return `<a href="${path}" class="menu__item menu__item--active">${name}</a>`
+export const menuItemView = ({name, path, color = "#000"}) => {
+  return `<a href="${path}" style="color: ${color}" class="menu__item menu__item--active">${name}</a>`
 }

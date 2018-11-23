@@ -30,6 +30,7 @@ const navigationMenuView = new MenuView({
   menuItems,
   wrapper: document.querySelector('.nav__menu'),
   toggleButton: document.querySelector('.nav__menu-button'),
+  color: '#fff',
 })
 
 const stickyNavigationMenuView = new MenuView({
