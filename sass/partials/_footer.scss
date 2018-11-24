@@ -36,6 +36,7 @@ footer {
   }
 
   &--newsletter {
+    width: 33%;
     left: 63%;
   }
 }
@@ -69,6 +70,7 @@ footer {
 }
 
 .footer__form {
+  width: 100%;
   margin: 25px 0px 12px 0px;
   border-bottom: 1px solid #999;
   padding-bottom: 7px;
@@ -91,20 +93,23 @@ footer {
 }
 
 .footer__input {
-  width: 220px;
+  width: 70%;
   outline: none;
+  padding: 0px;
   font-size: 0.9rem;
   color: #444;
   border: none;
 }
 
 .footer__submit-button {
+  width: 30%;
   color: #000;
   border: none;
   outline: none;
   background: transparent;
   font-size: 0.9rem;
   transition: color .2s;
+  padding: 0px;
   cursor: pointer;
 
   &:hover {
