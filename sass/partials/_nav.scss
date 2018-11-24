@@ -45,10 +45,35 @@
 }
 
 .nav__menu-button {
+  position: relative;
   display: inline-block;
   width: 30px; height: 30px;
   vertical-align: middle;
-  background: #fff;
   margin-left: 30px;
   cursor: pointer;
+
+  &::before, &::after {
+    position: absolute;
+    top: 50%;
+    content: '';
+    display: block;
+    width: 100%; height: 2px;
+    background: #fff;
+    transform: translate3d(0px, -7px, 0);
+    transition: transform .2s;
+  }
+
+  &::after {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+.nav__menu-button--active {
+  &::before {
+    transform: translate3d(0px, -50%, 0) rotate(-45deg);
+  }
+
+  &::after {
+    transform: translate3d(0px, -50%, 0) rotate(45deg);
+  }
 }

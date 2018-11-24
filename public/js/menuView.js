@@ -49,6 +49,7 @@ export default class MenuView {
   }
 
   activate() {
+    this.toggleButton.classList.add('nav__menu-button--active');
     this.wrapper.classList.add('menu-animation--active');
     this.wrapper.classList.remove('menu-animation--deactive');
     this.isActive = true;
@@ -62,6 +63,7 @@ export default class MenuView {
   }
 
   deactivate() {
+    this.toggleButton.classList.remove('nav__menu-button--active');
     this.wrapper.classList.remove('menu-animation--active');
     this.wrapper.classList.add('menu-animation--deactive');
     this.isActive = false;
