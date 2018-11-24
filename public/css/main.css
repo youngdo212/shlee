@@ -101,7 +101,7 @@ header {
   display: inline-block;
   width: 170px;
   height: 80px;
-  background: yellowgreen;
+  background: no-repeat center/100% url(../../public/img/yambo_white.png);
   vertical-align: middle;
 }
 
@@ -163,7 +163,7 @@ header {
   display: inline-block;
   width: 120px;
   height: 60px;
-  background: yellowgreen;
+  background: no-repeat center/100% url(../../public/img/yambo_black.png);
   vertical-align: middle;
 }
 
@@ -206,7 +206,7 @@ footer {
 .footer__logo {
   width: 130px;
   height: 60px;
-  background: #8f2727;
+  background: no-repeat center/100% url(../../public/img/yambo_black.png);
   margin: auto;
 }
 
