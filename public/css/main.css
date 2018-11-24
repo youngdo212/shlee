@@ -314,6 +314,9 @@ footer {
   color: #bd1a1a;
   font-size: 0.9rem;
 }
+.footer__form-message--submitted {
+  color: #0f8f2b;
+}
 
 .footer__copyright-policy {
   position: absolute;

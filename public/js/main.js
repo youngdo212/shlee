@@ -3,6 +3,7 @@ import Modal from './modal.js';
 import ProjectSectionView from './projectSectionView.js';
 import MenuView from './menuView.js';
 import Header from './header.js';
+import FooterForm from './footerForm.js';
 
 import {projects, showreel, menuItems} from './data.js';
 
@@ -40,4 +41,11 @@ const stickyNavigationMenuView = new MenuView({
 
 const header = new Header({
   header: document.querySelector('header'),
+})
+
+const footerForm = new FooterForm({
+  form: document.querySelector('.footer__form'),
+  formMessage: document.querySelector('.footer__form-message'),
+  submitMessage: 'Thank you for subscribing!',
+  rejectMessage: 'Please enter a valid email address.',
 })

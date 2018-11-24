@@ -120,6 +120,10 @@ footer {
 .footer__form-message {
   color: rgb(189, 26, 26);
   font-size: 0.9rem;
+  
+  &--submitted {
+    color: rgb(15, 143, 43);
+  }
 }
 
 .footer__copyright-policy {
