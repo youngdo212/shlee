@@ -1,19 +1,23 @@
 import ProjectView from './projectView.js';
 
 export default class ProjectSectionView {
-  constructor({projects, wrapper, observer}) {
-    this.projectViews = projects.map((project) => {
-      return new ProjectView({
-        project,
-        wrapper,
-        observer,
-      })}
-    );
+  constructor({wrapper, projectObserver, quickViewHandler}) {
+    this.wrapper = wrapper;
+    this.projectObserver = projectObserver;
+    this.quickViewHandler = quickViewHandler;
   }
 
-  registerQuickViewHandler(handler) {
-    this.projectViews.forEach((projectView) => {
-      projectView.bindQuickViewHandler(handler);
+  addProject(projects) {
+    const newProjectViews = projects.map((project) => {
+      return new ProjectView({
+        project,
+        wrapper: this.wrapper,
+        observer: this.projectObserver,
+      })
+    });
+
+    newProjectViews.forEach((projectView) => {
+      projectView.bindQuickViewHandler(this.quickViewHandler);
     });
   }
 }

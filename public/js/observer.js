@@ -1,10 +1,10 @@
-const option = {
+const projectObserverOption = {
   root: null,
   rootMargin: '0px',
   threshold: 0,
 }
 
-const callback = (projectViewIntersections, observer) => {
+const projectObserverCallback = (projectViewIntersections, observer) => {
   projectViewIntersections.forEach((projectViewIntersection) => {
     if(!projectViewIntersection.isIntersecting) return;
 
@@ -14,6 +14,6 @@ const callback = (projectViewIntersections, observer) => {
   })
 }
 
-const observer = new IntersectionObserver(callback, option);
+const projectObserver = new IntersectionObserver(projectObserverCallback, projectObserverOption);
 
-export default observer;
+export {projectObserver};

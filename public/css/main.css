@@ -206,7 +206,7 @@ header {
 
 section {
   width: 90vw;
-  margin: 130px auto 50px auto;
+  margin: 130px auto 0px auto;
 }
 
 footer {
@@ -595,6 +595,16 @@ footer {
   transition: opacity 0.5s, visibility 0.1s 0.5s;
   opacity: 0;
   visibility: hidden;
+}
+
+.loader {
+  width: 90vw;
+  height: 50px;
+  margin: auto;
+}
+
+.loader--loading {
+  background: #ffb9b9;
 }
 
 /*# sourceMappingURL=main.css.map */

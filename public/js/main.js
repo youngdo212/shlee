@@ -4,9 +4,10 @@ import ProjectSectionView from './projectSectionView.js';
 import MenuView from './menuView.js';
 import Header from './header.js';
 import FooterForm from './footerForm.js';
-import observer from './observer.js';
+import Loader from './loader.js';
+import {projectObserver} from './observer.js';
 
-import {projects, showreel, menuItems} from './data.js';
+import {showreel, menuItems} from './data.js';
 
 const nav = new stickyNavigation({
   navigation: document.querySelector('.sticky-nav'),
@@ -18,12 +19,16 @@ const modal = new Modal({
 })
 
 const projectSectionView = new ProjectSectionView({
-  projects,
   wrapper: document.querySelector('section'),
-  observer,
+  projectObserver,
+  quickViewHandler: modal.activate.bind(modal),
 })
 
-projectSectionView.registerQuickViewHandler(modal.activate.bind(modal));
+const loader = new Loader({
+  loader: document.querySelector('.loader'),
+  handler: projectSectionView.addProject.bind(projectSectionView),
+  baseUrl: 'http://127.0.0.1:8080/public/js/projectsAll.json',
+})
 
 const showreelButton = document.querySelector('.header__showreel');
 
