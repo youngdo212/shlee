@@ -4,6 +4,7 @@ import ProjectSectionView from './projectSectionView.js';
 import MenuView from './menuView.js';
 import Header from './header.js';
 import FooterForm from './footerForm.js';
+import observer from './observer.js';
 
 import {projects, showreel, menuItems} from './data.js';
 
@@ -19,6 +20,7 @@ const modal = new Modal({
 const projectSectionView = new ProjectSectionView({
   projects,
   wrapper: document.querySelector('section'),
+  observer,
 })
 
 projectSectionView.registerQuickViewHandler(modal.activate.bind(modal));

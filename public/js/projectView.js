@@ -1,30 +1,20 @@
 import {projectView as template} from './template.js';
 
 export default class ProjectView {
-  constructor({project, wrapper}) {
+  constructor({project, wrapper, observer}) {
     this.project = project;
+    this.element = null;
     this.quickViewButton = null;
-    this.image = null;
     this.render({wrapper});
-    this.registerImageLoadHandler();
+    observer.observe(this.element);
   }
 
   render({wrapper}) {
     const html = template(this.project);
     wrapper.insertAdjacentHTML('beforeend', html);
 
-    const renderedProjectView = wrapper.lastElementChild;
-    this.quickViewButton = renderedProjectView.querySelector('.project__quick-view');
-    this.image = renderedProjectView.querySelector('.project__image');
-  }
-
-  registerImageLoadHandler() {
-    this.image.addEventListener('load', ({target}) => {
-      target.setAttribute('src', target.dataset.src);
-      this.image.addEventListener('load', ({target}) => {
-        target.removeAttribute('data-src');
-      }, {once: true})
-    }, {once: true})
+    this.element = wrapper.lastElementChild;
+    this.quickViewButton = this.element.querySelector('.project__quick-view');
   }
 
   bindQuickViewHandler(handler) {
