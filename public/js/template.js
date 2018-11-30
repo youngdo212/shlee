@@ -2,7 +2,7 @@ export const projectView = ({title, titleColor = '#fff', description, image, vid
   return (
     `<div class="project project--invisible" style="width: ${width}; padding-top: ${heightRatio}; margin-right: ${marginRight};">
       <div class="project-inner">
-        <img class="project__image" src="./img/placeholder.jpg" data-src="${image}" alt="project_image">
+        <img class="project__image" src="${image}" alt="${title}">
         <div class="project__title" style="color: ${titleColor};">${title}</div>
         <div class="project__footer">
           <div class="project__description">${description}</div>

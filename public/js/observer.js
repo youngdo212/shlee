@@ -9,13 +9,7 @@ const callback = (projectViewIntersections, observer) => {
     if(!projectViewIntersection.isIntersecting) return;
 
     const projectView = projectViewIntersection.target;
-    const projectViewImage = projectView.querySelector('img');
-
-    projectViewImage.setAttribute('src', projectViewImage.dataset.src);
-    projectViewImage.addEventListener('load', () => {
-      projectViewImage.removeAttribute('data-src');
-      projectView.classList.remove('project--invisible');
-    }, {once: true});
+    projectView.classList.remove('project--invisible');
     observer.unobserve(projectView);
   })
 }
