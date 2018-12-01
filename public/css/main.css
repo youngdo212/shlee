@@ -599,12 +599,19 @@ footer {
 
 .loader {
   width: 90vw;
-  height: 50px;
-  margin: auto;
+  margin: 0px auto 15px auto;
+  visibility: hidden;
 }
 
 .loader--loading {
-  background: #ffb9b9;
+  visibility: visible;
+}
+
+.loading-icon {
+  width: 60px;
+  height: 60px;
+  background: no-repeat center/100% url("../img/loading-icon.gif");
+  margin: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

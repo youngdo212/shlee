@@ -1,8 +1,15 @@
 .loader {
-  width: $main-width; height: 50px;
-  margin: auto;
+  width: $main-width;
+  margin: 0px auto 15px auto;
+  visibility: hidden;
 }
 
 .loader--loading {
-  background: rgb(255, 185, 185);
+  visibility: visible;
+}
+
+.loading-icon {
+  width: 60px; height: 60px;
+  background: no-repeat center/100% url('../img/loading-icon.gif');
+  margin: auto;
 }
