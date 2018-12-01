@@ -1,38 +1,37 @@
+import {ajax} from './helper.js';
+
 export default class Loader {
-  constructor({loader, handler, baseUrl}) {
+  constructor({loader, handler, url}) {
     this.index = 0;
     this.loader = loader;
     this.handler = handler;
-    this.baseUrl = baseUrl;
+    this.url = url;
     this.createObserver();
   }
 
   createObserver() {
-    const observer = new IntersectionObserver((entries, observe) => {
+    const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if(!entry.isIntersecting) return;
 
-        const oReq = new XMLHttpRequest();
-
-        oReq.addEventListener('load', () => {
-          this.loader.classList.remove('loader--loading');
-          const projectsAll = JSON.parse(oReq.response);
-          const projects = projectsAll[this.index++];
-
-          if(!projects) {
-            observe.unobserve(entry.target);
-            return;
-          }
-
-          this.handler(projects);
-        })
-        oReq.open('GET', this.baseUrl);
-        oReq.send();
-
         this.loader.classList.add('loader--loading');
+
+        ajax({
+          method: 'GET',
+          url: this.url,
+          callback: this.load.bind(this, observer),
+        });
       });
     });
 
     observer.observe(this.loader);
+  }
+
+  load(observer, data) {
+    const projectsAll = JSON.parse(data);
+    const projects = projectsAll[this.index++];
+
+    !!projects ? this.handler(projects) : observer.unobserve(this.loader);
+    this.loader.classList.remove('loader--loading');
   }
 }
