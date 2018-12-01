@@ -1,10 +1,18 @@
 import ProjectView from './projectView.js';
 
 export default class ProjectSectionView {
-  constructor({wrapper, projectObserver, quickViewHandler}) {
+  constructor({wrapper, quickViewHandler}) {
     this.wrapper = wrapper;
-    this.projectObserver = projectObserver;
     this.quickViewHandler = quickViewHandler;
+    this.observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if(!entry.isIntersecting) return;
+
+        const projectView = entry.target;
+        projectView.classList.remove('project--invisible');
+        observer.unobserve(projectView);
+      });
+    });
   }
 
   addProject(projects) {
@@ -12,7 +20,7 @@ export default class ProjectSectionView {
       return new ProjectView({
         project,
         wrapper: this.wrapper,
-        observer: this.projectObserver,
+        observer: this.observer,
       })
     });
 
