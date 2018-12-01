@@ -62,5 +62,51 @@
       "heightRatio": "29.394%",
       "marginRight": "0px"
     }
+  ],
+
+  "1" : [
+    {
+      "title": "Bombo",
+      "description": "A Series of Three",
+      "image": "./img/bombo.jpg",
+      "width": "49.5%",
+      "heightRatio": "28.71%",
+      "marginRight": "1%"
+    },
+    {
+      "title": "Xiaomi Mix Mi 2",
+      "description": "Official Video Presentation",
+      "image": "./img/Xiaomi-Mix-Mi-2.jpg",
+      "video": "https://player.vimeo.com/video/246752704?title=0&byline=0&portrait=0&badge=0&color=ffffff",
+      "width": "49.5%",
+      "heightRatio": "28.71%",
+      "marginRight": "0px"
+    },
+    {
+      "title": "Lola Marsh",
+      "description": "Wishing Girl",
+      "image": "./img/lola-marsh.jpg",
+      "video": "https://player.vimeo.com/video/215997853?title=0&byline=0&portrait=0&badge=0&color=ffffff",
+      "width": "32.66%",
+      "heightRatio": "29.394%",
+      "marginRight": "1%"
+    },
+    {
+      "title": "Magnificence",
+      "description": "TVC Spot",
+      "image": "./img/magnificence.jpg",
+      "video": "https://player.vimeo.com/video/296589486?title=0&byline=0&portrait=0&badge=0&color=ffffff",
+      "width": "32.66%",
+      "heightRatio": "29.394%",
+      "marginRight": "1%"
+    },
+    {
+      "title": "Plus is More",
+      "description": "Heart Care +",
+      "image": "./img/plus-is-more.jpg",
+      "width": "32.66%",
+      "heightRatio": "29.394%",
+      "marginRight": "0px"
+    }
   ]
 }
