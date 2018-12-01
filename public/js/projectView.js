@@ -4,9 +4,10 @@ export default class ProjectView {
   constructor({project, wrapper, observer}) {
     this.project = project;
     this.element = null;
+    this.image = null;
     this.quickViewButton = null;
     this.render({wrapper});
-    observer.observe(this.element);
+    this.observeProjectView({observer});
   }
 
   render({wrapper}) {
@@ -15,6 +16,13 @@ export default class ProjectView {
 
     this.element = wrapper.lastElementChild;
     this.quickViewButton = this.element.querySelector('.project__quick-view');
+    this.image = this.element.querySelector('.project__image');
+  }
+
+  observeProjectView({observer}) {
+    this.image.addEventListener('load', () => {
+      observer.observe(this.element);
+    }, {once: true});
   }
 
   bindQuickViewHandler(handler) {
