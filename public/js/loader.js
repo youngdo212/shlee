@@ -1,4 +1,4 @@
-import {ajax} from './helper.js';
+import {ajax, Observer} from './helper.js';
 
 export default class Loader {
   constructor({loader, handler, url}) {
@@ -6,32 +6,28 @@ export default class Loader {
     this.loader = loader;
     this.handler = handler;
     this.url = url;
-    this.createObserver();
+    this.observer = new Observer({
+      callback: this.load.bind(this),
+    })
+    this.observer.observe(this.loader);
+    this.load();
   }
 
-  createObserver() {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if(!entry.isIntersecting) return;
+  load() {
+    this.loader.classList.add('loader--loading');
 
-        this.loader.classList.add('loader--loading');
-
-        ajax({
-          method: 'GET',
-          url: this.url,
-          callback: this.load.bind(this, observer),
-        });
-      });
+    ajax({
+      method: 'GET',
+      url: this.url,
+      callback: this.execute.bind(this),
     });
-
-    observer.observe(this.loader);
   }
 
-  load(observer, data) {
+  execute(data) {
     const projectsAll = JSON.parse(data);
     const projects = projectsAll[this.index++];
 
-    !!projects ? this.handler(projects) : observer.unobserve(this.loader);
+    !!projects ? this.handler(projects) : this.observer.unobserve(this.loader);
     this.loader.classList.remove('loader--loading');
   }
 }
